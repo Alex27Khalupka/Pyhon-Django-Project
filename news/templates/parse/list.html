@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Last Articles{% endblock %}
+
+{% block content %}
+	
+	{% if articles_list %}
+		{% for a in articles_list %}
+			<a href="{% url 'parse:detail' a.id %}">{{a.title}}</a><br>
+			<img src={{a.image}} width = 520 height = 384 align="left" alt={{a.image}}><br>
+			Publish date: <em>{{a.date}}</em><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		{% endfor %}
+
+	{% else %}
+		There is no articles )=
+	{% endif %}
+
+{% endblock %}

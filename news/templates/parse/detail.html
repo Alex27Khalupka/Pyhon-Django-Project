@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{article.title}}{% endblock %}
+
+{% block content %}
+	
+	<h2>{{article.title}}</h2>
+	<img src={{article.image}} width = 520 height = 384 align="left" alt={{article.image}}><br>
+	<p>{{article.description}}</p>
+	<a href={{article.link}}>Learn more</a><br>
+	Publish date: <em>{{article.date}}</em><br>
+
+	<hr>
+
+
+
+{% endblock %}

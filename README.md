@@ -25,7 +25,7 @@ Clone this repository:
 To parse data from any website use: `python manage.py new_parse web_site_url`
   
 Example:
-  `python manage.py new_parse https://www.yahoo.com/news`
+  `python manage.py new_parse https://www.yahoo.com/news/rss`
   
   
 To run created web-site use: `python manage.py runserver`
