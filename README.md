@@ -1,4 +1,4 @@
-# Pyhon-Django Project
+# Python-Django Project
 
 Vesrion 1.0.1
 
