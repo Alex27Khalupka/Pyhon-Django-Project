@@ -12,6 +12,31 @@
 
 	<hr>
 
+	{% if latest_comments_list %}
+		{% for comment in latest_comments_list %}
+			<p>
+				<strong>{{comment.author_name}}</strong><br>
+				{{comment.comment_text}}
+			</p>  
+
+		{% endfor %}
+
+	{% else %}
+		There is no comments. Become first =)
+	{% endif %}
+
+	<hr>
+
+	<form action="{% url 'parse:leave_comment' article.id %}" method="POST">
+		
+		{% csrf_token %}
+
+		<input type="text" required placeholder="Your name" name="name"><br>
+		<textarea name="text" required="" placeholder="Comment Text" cols="30" rows="10"></textarea><br>
+
+		<button type="submit">Leave comment</button>
+	</form>
+
 
 
 {% endblock %}

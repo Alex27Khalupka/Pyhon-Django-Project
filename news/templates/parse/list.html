@@ -5,15 +5,24 @@
 {% block content %}
 	
 	{% if articles_list %}
-		{% for a in articles_list %}
-			<a href="{% url 'parse:detail' a.id %}">{{a.title}}</a><br>
-			<img src={{a.image}} width = 520 height = 384 align="left" alt={{a.image}}><br>
-			Publish date: <em>{{a.date}}</em><br>
+		{% for article in articles_list %}
+			<a href="{% url 'parse:detail' article.id %}">{{article.title}}</a><br>
+			<img src={{article.image}} width = 520 height = 384 align="left" alt={{article.image}}><br>
+			Publish date: <em>{{article.date}}</em><br>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		{% endfor %}
 
 	{% else %}
 		There is no articles )=
+	{% endif %}
+
+	{% if latest_comments_list %}
+		{% for comment in latest_comments_list %}
+			{{comment.author_name}}  --  {{comment.comment_text}}
+		{% endfor %}
+
+	{% else %}
+		There is no comments. Become first =)
 	{% endif %}
 
 {% endblock %}
